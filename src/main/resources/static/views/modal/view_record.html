@@ -1,0 +1,21 @@
+<div class="clearfix">
+    <div class="modal-header model-grey-color">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="$close()"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">View : {{employee.name}}</h4>
+    </div>
+    <div class="modal-body">
+        <dl class="dl-horizontal">
+            <dt>ID</dt>
+            <dd>{{employee.id}}</dd>
+            <dt>Name</dt>
+            <dd>{{employee.name}}</dd>
+            <dt>Active</dt>
+            <dd>{{employee.active}}</dd>
+            <dt>Department</dt>
+            <dd>{{employee.department}}</dd>
+        </dl>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-danger" ng-click="$close()"><i class="fa fa-close"></i> Close</button>
+    </div>
+</div>

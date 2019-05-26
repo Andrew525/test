@@ -1,0 +1,42 @@
+<div class="clearfix">
+    <div class="modal-header model-grey-color">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="$close()"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">Add Emp</h4>
+    </div>
+    <div class="modal-body">
+        <form class="form-horizontal" role="form">
+            <div class="form-group">
+                <label class="col-sm-3 control-label">Name <sup class="sup-color">*</sup></label>
+
+                <div class="col-sm-8">
+                    <input type="text" ng-model="name" placeholder="Employee Name" class="form-control">
+                </div>
+                <span class="help-button" uib-tooltip="Please enter emp name" tooltip-placement="left">?</span>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">Active <sup class="sup-color">*</sup></label>
+
+                <div class="col-sm-8">
+                    <input type="checkbox" ng-model="active" placeholder="Employee Active" class="form-control">
+                </div>
+                <span class="help-button" uib-tooltip="Please enter emp active" tooltip-placement="left">?</span>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">Department <sup class="sup-color">*</sup></label>
+
+                <div class="col-sm-8">
+                    <select
+                    ng-model="dpId"
+                    ng-options="dep.id as dep.name for dep in departments track by dep.id"
+                    placeholder="Employee Department" class="form-control">
+                    </select>
+                </div>
+                <span class="help-button" uib-tooltip="Please enter emp department" tooltip-placement="left">?</span>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer model-grey-color">
+        <button class="btn btn-success" ng-click="saveEmp()"><i class="glyphicon glyphicon-floppy-save"></i> Save</button>
+        <button class="btn btn-danger" ng-click="$close()"><i class="glyphicon glyphicon-remove"></i> Close</button>
+    </div>
+</div>

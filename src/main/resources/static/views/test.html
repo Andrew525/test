@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Main Page</title>
+    <script src="js/lib/angular.min.js"></script>
+    <script src="js/lib/ui-bootstrap-tpls-2.5.0.min.js"></script>
+    <script src="js/app/app.js"></script>
+    <script src="js/app/EmployeeController.js"></script>
+    <script src="js/app/EmployeeService.js"></script>
+
+    <script src="http://ui-grid.info/release/ui-grid.js"></script>
+    <link rel="stylesheet" href="http://ui-grid.info/release/ui-grid.css" type="text/css">
+
+    <link rel="stylesheet" href="css/lib/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/app/app.css"/>
+
+</head>
+<body >
+<div ng-app="demo">
+<hr/>
+<div class="container" ng-controller="EmployeeController">
+    <div class="row">
+        <label>Employee2</label> <input type="text" ng-model="empDto.name" class="input-sm spacing"/>
+        <label>Active2</label> <input type="text" ng-model="empDto.active" class="input-sm spacing"/>
+        <label>Departaments</label> <input type="text" ng-model="skills" ng-list class="input-sm custom-width spacing"
+                                     placeholder="use comma to separate skills"/>
+        <button ng-click="saveEmployee()" class="btn btn-sm btn-info">Save User</button>
+    </div>
+    <hr/>
+    <div class="row">
+        <p>{{allEmployee | json}}</p>
+    </div>
+    <hr/>
+
+    <div class="row" ng-repeat="user in allUsers">
+        <div class="">
+            <h3>{{emp.empName}}</h3>
+            <span ng-repeat="skill in user.skillDtos" class="spacing">{{skill.skillName}}</span>
+        </div>
+    </div>
+</div>
+</div>
+<div ng-app="uigridApp" ng-controller="uigridCtrl">
+    <div ui-grid="gridOptions" ui-grid-pagination class="myGrid"></div>
+</div>
+</body>
+
+</html>
